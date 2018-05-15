@@ -1,0 +1,35 @@
+{
+  "name": "nodebb-widget-board-stats",
+  "version": "1.0.0",
+  "description": "Classic Board Stats Widget for NodeBB.",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psychobunny/nodebb-widget-board-stats"
+  },
+  "keywords": [
+    "nodebb",
+    "widget",
+    "board",
+    "stats",
+    "statistics"
+  ],
+  "author": {
+    "name": "psychobunny",
+    "email": "psycho.bunny@hotmail.com"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/psychobunny/nodebb-widget-board-stats/issues"
+  },
+  "readme": "",
+  "readmeFilename": "README.md",
+  "_id": "nodebb-widget-board-stats@0.0.1",
+  "_from": "nodebb-widget-board-stats@~0.0.1",
+  "nbbpm": {
+    "compatibility": "^1.8.0"
+  }
+}

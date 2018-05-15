@@ -1,0 +1,28 @@
+{
+	"id": "nodebb-widget-board-stats",
+	"name": "Classic Board Stats Widget for NodeBB",
+	"description": "Widget listing active users and other board stats in a classical forum look but shown in real-time.",
+	"url": "https://github.com/psychobunny/nodebb-widget-board-stats",
+	"library": "./library.js",
+	"hooks": [
+		{
+			"hook": "static:app.load", "method": "init"
+		},
+		{
+			"hook": "filter:widgets.getWidgets", "method": "defineWidgets"
+		},
+		{
+			"hook": "filter:widget.render:board-stats", "method": "renderWidget"
+		},
+		{
+			"hook": "action:user.online", "method": "updateAndGetOnlineUsers"
+		}
+	],
+	"templates": "./public/templates",
+	"less": [
+		"public/less/widget.less"
+	],
+	"scripts": [
+		"public/src/client.js"
+	]
+}
