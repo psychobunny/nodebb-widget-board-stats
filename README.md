@@ -5,3 +5,7 @@ Widget listing active users and other board stats in a classical forum look but 
 ## Installation
 
     npm install nodebb-widget-board-stats
+
+## Screenshots
+
+![](https://i.imgur.com/eZuW7av.png)
