@@ -1,8 +1,8 @@
-/* globals app, ajaxify, socket */
+'use strict';
+
+/* globals document, window, app, socket */
 
 $(document).ready(function () {
-	'use strict';
-
 	var intervalId = 0;
 
 	var pollInProgress = false;
@@ -32,12 +32,11 @@ $(document).ready(function () {
 				if (!data) {
 					pollInProgress = false;
 					return;
-                }
-                
+				}
+
 				app.parseAndTranslate('widgets/board-stats', data, function (html) {
-                    var div = $('[component="widget/board-stats"]');
-                    div.html(html.html());
-                    div.find('.timeago').timeago();
+					var div = $('[component="widget/board-stats"]');
+					div.html(html.html());
 					pollInProgress = false;
 				});
 			});
@@ -51,5 +50,4 @@ $(document).ready(function () {
 		pollInProgress = false;
 		intervalId = 0;
 	}
-
 });
