@@ -122,6 +122,7 @@ Widget.updateAndGetOnlineUsers = function (callback) {
 				}
 
 				var totalUsers = users.onlineCount + users.guestCount;
+				data.timestamp = data.timestamp || Date.now();
 
 				if (parseInt(data.total || 0, 10) <= totalUsers) {
 					data.timestamp = Date.now();
