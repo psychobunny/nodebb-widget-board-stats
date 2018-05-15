@@ -8,4 +8,4 @@ Widget listing active users and other board stats in a classical forum look but 
 
 ## Screenshots
 
-![](https://i.imgur.com/1D1mLrX.png)
+![](https://i.imgur.com/GV8SSeD.png)
