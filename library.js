@@ -47,7 +47,7 @@ function getWidgetData(callback) {
 			latest: joinUsers(results.latestUser),
 			relative_path: nconf.get('relative_path'),
 			mostUsers: {
-				date: (new Date(results.onlineUsers.timestamp)).toDateString(),
+				date: (new Date(parseInt(results.onlineUsers.timestamp, 10))).toDateString(),
 				total: results.onlineUsers.total,
 			},
 		};
