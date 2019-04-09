@@ -144,7 +144,13 @@ Widget.renderWidget = function (widget, callback) {
 			return callback(err);
 		}
 
-		app.render('widgets/board-stats', data, callback);
+		app.render('widgets/board-stats', data, function (err, html) {
+			if (err) {
+				return callback(err);
+			}	
+			widget.html = html;
+			callback(null, widget);
+		});		
 	});
 };
 
