@@ -1,16 +1,17 @@
 'use strict';
 
-var async = module.parent.require('async');
-var nconf = module.parent.require('nconf');
-var db = module.parent.require('./database');
-var user = module.parent.require('./user');
-var utils = module.parent.require('./utils');
+const async = require('async');
+const nconf = module.parent.require('nconf');
 
-var socketPlugins = module.parent.require('./socket.io/plugins');
+const db = require.main.require('./src/database');
+const user = require.main.require('./src/user');
+const utils = require.main.require('./public/src/utils');
 
-var app;
+const socketPlugins = require.main.require('./src/socket.io/plugins');
 
-var Widget = module.exports;
+const app;
+
+const Widget = module.exports;
 
 Widget.init = function (params, callback) {
 	app = params.app;
@@ -104,7 +105,7 @@ Widget.updateAndGetOnlineUsers = function (callback) {
 			db.sortedSetCount('users:online', now - 300000, '+inf', next);
 		},
 		function (onlineCount, next) {
-			module.parent.require('./socket.io/admin/rooms').getTotalGuestCount(function (err, guestCount) {
+			require.main.require('./src/socket.io/admin/rooms').getTotalGuestCount(function (err, guestCount) {
 				if (err) {
 					return next(err);
 				}
@@ -147,10 +148,10 @@ Widget.renderWidget = function (widget, callback) {
 		app.render('widgets/board-stats', data, function (err, html) {
 			if (err) {
 				return callback(err);
-			}	
+			}
 			widget.html = html;
 			callback(null, widget);
-		});		
+		});
 	});
 };
 
