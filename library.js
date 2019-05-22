@@ -9,7 +9,7 @@ const utils = require.main.require('./public/src/utils');
 
 const socketPlugins = require.main.require('./src/socket.io/plugins');
 
-const app;
+let app;
 
 const Widget = module.exports;
 
