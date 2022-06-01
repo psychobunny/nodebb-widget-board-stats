@@ -5,7 +5,7 @@ const nconf = module.parent.require('nconf');
 
 const db = require.main.require('./src/database');
 const user = require.main.require('./src/user');
-const utils = require.main.require('./public/src/utils');
+const utils = require.main.require('./src/utils');
 
 const socketPlugins = require.main.require('./src/socket.io/plugins');
 
